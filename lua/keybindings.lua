@@ -7,8 +7,10 @@ vim.g.maplocalleader = ","
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true }
 
+map('i', 'jj', '<Esc>', opt)
+
 map('n', 'J', '5j', opt)
 map('n', 'K', '5k', opt)
 
 -- nvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
+map('n', '<leader>g', ':NvimTreeToggle<CR>', opt)
