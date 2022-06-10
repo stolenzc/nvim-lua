@@ -237,16 +237,16 @@ vim.opt.whichwrap:append("<>[]hl")
 -- Remove auto-comments
 vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
 
-for prefix, tab in pairs(settings) do
-    if prefix ~= "disable_builtin_plugins" then
-        for key, value in pairs(tab) do
-            vim[prefix][key] = value
-        end
-    else
-        for _, plugin in pairs(tab) do
-            vim.g["loaded_" .. plugin] = 1
-        end
-    end
-end
+-- for prefix, tab in pairs(settings) do
+--     if prefix ~= "disable_builtin_plugins" then
+--         for key, value in pairs(tab) do
+--             vim[prefix][key] = value
+--         end
+--     else
+--         for _, plugin in pairs(tab) do
+--             vim.g["loaded_" .. plugin] = 1
+--         end
+--     end
+-- end
 
 return settings
