@@ -8,7 +8,8 @@ require("keybindings")
 require("plugins")
 
 -- 插件配置
-require("conf.nvim-tree")
+require("conf.nvimtree")
+require("conf.bufferline")
 
 -- 主题管理
 require("colorscheme")

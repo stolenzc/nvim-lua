@@ -12,5 +12,13 @@ map('i', 'jj', '<Esc>', opt)
 map('n', 'J', '5j', opt)
 map('n', 'K', '5k', opt)
 
+-- 光标移动
+map('n', '<C-h>', '<C-w>h', opt)
+map('n', '<C-l>', '<C-w>l', opt)
+
+-- 正常模式下 esc取消搜索高亮
+map('n', '<ESC>', ':nohlsearch<CR>', opt)
+
 -- nvimTree
 map('n', '<leader>g', ':NvimTreeToggle<CR>', opt)
+map('n', '<leader>v', ':NvimTreeFocus<CR>', opt)
