@@ -1,15 +1,16 @@
 -- 基础配置
-require("basic")
+require "basic"
 
 -- 快捷键配置
-require("keybindings")
+require "keybindings"
 
 -- Packer插件管理
-require("plugins")
+require "plugins"
 
 -- 插件配置
-require("conf.nvimtree")
-require("conf.bufferline")
+require "conf.nvimtree"
+require "conf.bufferline"
+require "conf.treesitter"
 
 -- 主题管理
-require("colorscheme")
+require "colorscheme"

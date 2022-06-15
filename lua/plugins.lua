@@ -26,4 +26,7 @@ return require('packer').startup(function()
             require("conf.bufferline")
         end
     }
+
+    -- 代码高亮
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 end)
