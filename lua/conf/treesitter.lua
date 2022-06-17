@@ -1,12 +1,23 @@
-require'nvim-treesitter.configs'.setup {
+local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
+if not status_ok then
+    return
+end
+
+configs.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "python", "lua", "go", "markdown", "json" },
+  -- ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = true,
+  -- 同步安装
+  sync_install = false,
 
   -- List of parsers to ignore installing (for "all")
-  -- ignore_install = { "javascript" },
+  ignore_install = { "" },
+
+  autopairs = {
+    enable = true
+  },
 
   highlight = {
     -- `false` will disable the whole extension
@@ -23,5 +34,7 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
-  },
+  }
+
 }
+
