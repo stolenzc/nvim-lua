@@ -18,15 +18,30 @@ return require('packer').startup(function()
 
     -- 多tab标签
     use {
-        "akinsho/bufferline.nvim",
-        requires = {
-            "famiu/bufdelete.nvim" -- 删除 buffer 时不影响现有布局
-        },
-        config = function()
-            require("conf.bufferline")
-        end
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons'
     }
+    -- use {
+    --     "akinsho/bufferline.nvim",
+    --     requires = {
+    --         "famiu/bufdelete.nvim" -- 删除 buffer 时不影响现有布局
+    --     },
+    --     config = function()
+    --         require("conf.bufferline")
+    --     end
+    -- }
 
+    -- git 侧栏标记
+    use {
+          'lewis6991/gitsigns.nvim',
+          -- tag = 'release' -- To use the latest release
+        }
     -- 代码高亮
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    -- 成对括号
+    use "windwp/nvim-autopairs"
+
+
 end)

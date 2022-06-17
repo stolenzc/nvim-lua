@@ -32,4 +32,10 @@ map('v', '>', '>gv', opt)
 
 -- nvimTree
 map('n', '<leader>g', ':NvimTreeToggle<CR>', opt)
-map('n', '<leader>v', ':NvimTreeFocus<CR>', opt)
+map('n', '<leader>v', ':NvimTreeFindFile<CR>', opt)
+
+-- bufferline
+map('n', '<leader>bh', ':BufferLineCyclePrev<CR>', opt)
+map('n', '<leader>bl', ':BufferLineCycleNext<CR>', opt)
+map('n', '<leader>bw', ':BufferLinePickClose<CR>', opt)
+

@@ -1,12 +1,12 @@
 -- https://github.com/kyazdani42/nvim-tree.lua
 -- local nvim_tree = require'nvim-tree'
-local status, nvim_tree = pcall(require, "nvim-tree")
-if not status then
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
   vim.notify("没有找到 nvim-tree")
   return
 end
 
-require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -47,7 +47,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = "└ ",
         edge = "│ ",

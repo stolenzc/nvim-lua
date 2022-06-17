@@ -11,6 +11,8 @@ require "plugins"
 require "conf.nvimtree"
 require "conf.bufferline"
 require "conf.treesitter"
+require "conf.nvgitsigns"
+require "conf.nvautopairs"
 
 -- 主题管理
 require "colorscheme"
