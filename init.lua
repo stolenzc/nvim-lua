@@ -13,6 +13,9 @@ require "conf.bufferline"
 require "conf.treesitter"
 require "conf.nvgitsigns"
 require "conf.nvautopairs"
+require "conf.telescope"
+require "lsp.setup"
+require "conf.nvcmp"
 
 -- 主题管理
 require "colorscheme"

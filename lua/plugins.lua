@@ -4,6 +4,7 @@ return require('packer').startup(function()
 
     -- 主题插件
     use 'w0ng/vim-hybrid'
+    use "EdenEast/nightfox.nvim"
 
     -- 中文文档
     use "yianwillis/vimcdoc"
@@ -20,17 +21,11 @@ return require('packer').startup(function()
     use {
         'akinsho/bufferline.nvim',
         tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = {
+            'famiu/bufdelete.nvim',     -- 删除buffer时不影响现有布局
+            'kyazdani42/nvim-web-devicons'
+        }
     }
-    -- use {
-    --     "akinsho/bufferline.nvim",
-    --     requires = {
-    --         "famiu/bufdelete.nvim" -- 删除 buffer 时不影响现有布局
-    --     },
-    --     config = function()
-    --         require("conf.bufferline")
-    --     end
-    -- }
 
     -- git 侧栏标记
     use {
@@ -43,5 +38,29 @@ return require('packer').startup(function()
     -- 成对括号
     use "windwp/nvim-autopairs"
 
+    -- 模糊搜索
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- lsp配置
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer'
+    }
+    use {
+        'hrsh7th/cmp-nvim-lsp', -- { name = nvim_lsp }
+        'hrsh7th/cmp-buffer',   -- { name = 'buffer' },
+        'hrsh7th/cmp-path',     -- { name = 'path' }
+        'hrsh7th/cmp-cmdline',  -- { name = 'cmdline' }
+        'hrsh7th/nvim-cmp',
+        -- vsnip
+        'hrsh7th/cmp-vsnip',    -- { name = 'vsnip' }
+        'hrsh7th/vim-vsnip',
+        'rafamadriz/friendly-snippets',
+        -- lspkind
+        'onsails/lspkind-nvim'
+    }
 
 end)

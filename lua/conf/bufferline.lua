@@ -36,23 +36,26 @@ bufferline.setup{
         diagnostics = "nvim_lsp",
         -- Other unselected buffer splits
         -- Split style："slant" | "thick" | "thin" | { "|", "|" }
-        separator_style = "thin",
+        separator_style = { "|", "|" },
         -- Diagnostic style
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local message
-            if diagnostics_dict.error then
-                message = string.format("%s%s", icons.diagnostics.Error, diagnostics_dict.error)
-            elseif diagnostics_dict.warning then
-                message = string.format("%s%s", icons.diagnostics.Warn, diagnostics_dict.warning)
-            elseif diagnostics_dict.info then
-                message = string.format("%s%s", icons.diagnostics.Info, diagnostics_dict.info)
-            elseif diagnostics_dict.hint then
-                message = string.format("%s%s", icons.diagnostics.Hint, diagnostics_dict.hint)
-            else
-                message = ""
-            end
-            return message
+            return "("..count..")"
         end,
+        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+        --     local message
+        --     if diagnostics_dict.error then
+        --         message = string.format("%s%s", icons.diagnostics.Error, diagnostics_dict.error)
+        --     elseif diagnostics_dict.warning then
+        --         message = string.format("%s%s", icons.diagnostics.Warn, diagnostics_dict.warning)
+        --     elseif diagnostics_dict.info then
+        --         message = string.format("%s%s", icons.diagnostics.Info, diagnostics_dict.info)
+        --     elseif diagnostics_dict.hint then
+        --         message = string.format("%s%s", icons.diagnostics.Hint, diagnostics_dict.hint)
+        --     else
+        --         message = ""
+        --     end
+        --     return message
+        -- end,
         -- Offset of function
         -- 左侧让出nvim-tree的空间
         offsets = {
@@ -92,32 +95,26 @@ bufferline.setup{
 
 
 -- local M = {}
--- 
 -- function M.before()
 --     M.register_global_key()
 -- end
--- 
 -- function M.after()
 --     -- Define the command to delete the buffer
 --     vim.api.nvim_create_user_command("BufferDelete", function()
 --         ---@diagnostic disable-next-line: missing-parameter
 --         local file_exists = vim.fn.filereadable(vim.fn.expand("%p"))
 --         local modified = vim.api.nvim_buf_get_option(0, "modified")
--- 
 --         -- if file doesnt exist & its modified
 --         if file_exists == 0 and modified then
 --             vim.notify("The file is not saved", "warn", { title = "Buffer" })
 --             return
 --         end
--- 
 --         local force = force or not vim.bo.buflisted or vim.bo.buftype == "nofile"
--- 
 --         -- if not force, change to prev buf and then close current
 --         local close_cmd = force and ":bd!" or ":bp | bd!" .. vim.api.nvim_get_current_buf()
 --         vim.cmd(close_cmd)
 --     end, {})
 -- end
--- 
 -- function M.register_global_key()
 --     mapping.register({
 --         {
@@ -276,5 +273,4 @@ bufferline.setup{
 --         },
 --     })
 -- end
--- 
 -- return M
