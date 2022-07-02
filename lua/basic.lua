@@ -2,7 +2,8 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
-vim.o.scrolloff = 21
+-- vim.o.scrolloff = 21
+vim.o.scrolloff = 10
 -- vim.o.sidescrolloff = 3
 -- 显示行号，不显示相对行号
 vim.wo.number = true
@@ -67,9 +68,18 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
+-- wsl 使用系统剪贴板
+if vim.fn.has('wsl') then
+  vim.cmd [[
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+  ]]
+end
 -- 兼容24位色彩支持 Macos 不支持真彩色显示
 vim.o.termguicolors = true
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 
 -- 开启拼写检查
 vim.opt.spell = false
@@ -77,7 +87,7 @@ vim.opt.spell = false
 vim.opt.spelllang = "en_us,cjk"
 
 -- hl允许换行移动
-vim.opt.whichwrap:append("<>[]hl")
+-- vim.opt.whichwrap:append("<>[]hl")
 -- 代码高亮
 vim.opt.syntax = 'on'
 
@@ -176,7 +186,6 @@ local settings = {
 -- vim.opt.listchars:append("eol:↴")
 -- vim.opt.listchars:append("tab:↹ ")
 
-vim.opt.shortmess:append("sI") -- reduce the display of <c-g>
 -- Reduce the display of <c-g>
 vim.opt.shortmess:append("sI")
 -- Remove auto-comments

@@ -38,7 +38,9 @@ bufferline.setup{
         -- Split style："slant" | "thick" | "thin" | { "|", "|" }
         separator_style = { "|", "|" },
         -- Diagnostic style
-        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+        --     return "("..count..")"
+        diagnostics_indicator = function(count)
             return "("..count..")"
         end,
         -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
