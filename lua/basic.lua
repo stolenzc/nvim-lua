@@ -77,9 +77,6 @@ if vim.fn.has('wsl') then
   augroup END
   ]]
 end
--- 兼容24位色彩支持 Macos 不支持真彩色显示
-vim.o.termguicolors = true
-vim.opt.termguicolors = true
 
 -- 开启拼写检查
 vim.opt.spell = false

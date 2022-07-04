@@ -11,26 +11,10 @@ bufferline.setup{
         mode = "buffers",
         -- Allow user to override highlight group
         themable = true,
-        -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-        -- 顶部buffer序号显示
-        numbers = "ordinal",
-
-        -- The currently selected buffer style
-        -- It is not recommended to modify the icons below
-        -- 默认图标，不建议修改
-        indicator_icon = "▎",
-        buffer_close_icon = "",
-        modified_icon = "●",
-        close_icon = "",
-        left_trunc_marker = "",
-        right_trunc_marker = "",
-
-        -- 鼠标操作
-        close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
+        -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string, -- 顶部buffer序号显示 numbers = "ordinal", --         -- The currently selected buffer style -- It is not recommended to modify the icons below -- 默认图标，不建议修改 indicator_icon = "▎", buffer_close_icon = "", modified_icon = "●", close_icon = "", left_trunc_marker = "", right_trunc_marker = "", -- 鼠标操作 close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
-
         -- Diagnostics source
         -- 使用nvim内置lsp
         diagnostics = "nvim_lsp",

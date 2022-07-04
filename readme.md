@@ -2,6 +2,14 @@
 
 ### vim内置使用
 
+### Requirement
+
+Packer 安装:
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+Nerd Font
 
 ### nvimtree
 
@@ -12,6 +20,7 @@
 - `c` - 拷贝
 - `p` - 粘贴
 - `d` - 删
+- `f` - 搜索
 
 ### bufferline
 

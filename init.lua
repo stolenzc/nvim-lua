@@ -1,6 +1,9 @@
 -- 基础配置
 require "basic"
 
+-- 颜色配置
+require "highlight"
+
 -- 快捷键配置
 require "keybindings"
 
