@@ -31,19 +31,20 @@ map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
 
 -- nvimTree
-map('n', '<leader>g', ':NvimTreeToggle<CR>', opt)
-map('n', '<leader>v', ':NvimTreeFindFile<CR>', opt)
+map('n', '<leader>g', '<cmd>NvimTreeToggle<CR>', opt)
+map('n', '<leader>v', '<cmd>NvimTreeFindFile<CR>', opt)
 
 -- bufferline
--- map('n', '<leader>bh', ':BufferLineCyclePrev<CR>', opt)
--- map('n', '<leader>bl', ':BufferLineCycleNext<CR>', opt)
--- map('n', '<leader>bw', ':BufferLinePickClose<CR>', opt)
+map('n', '<leader>bh', '<cmd>BufferLineCyclePrev<CR>', opt)
+map('n', '<leader>bl', '<cmd>BufferLineCycleNext<CR>', opt)
+map('n', '<leader>bw', '<cmd>Bdelete!<CR>', opt)
+map('n', '<leader>bp', '<cmd>BufferLinePickClose<CR>', opt)
 -- map('n', '<Tab>h', ':BufferLineCyclePrev<CR>', opt)
 -- map('n', '<Tab>l', ':BufferLineCycleNext<CR>', opt)
 -- map('n', '<Tab>w', ':BufferLinePickClose<CR>', opt)
-map('n', '<silent>[b', ':BufferLineCycleNext<CR>', opt)
-map('n', '<silent>b]', ':BufferLineCyclePrev<CR>', opt)
-map('n', '<Tab>w', ':BufferLinePickClose<CR>', opt)
+-- map('n', '<silent>[b', ':BufferLineCycleNext<CR>', opt)
+-- map('n', '<silent>b]', ':BufferLineCyclePrev<CR>', opt)
+-- map('n', '<Tab>w', ':BufferLinePickClose<CR>', opt)
 
 -- telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opt)
